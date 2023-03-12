@@ -437,6 +437,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &764906856 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6824031169415072791, guid: b776dca48d8b996469f8e07b874d06d1, type: 3}
+  m_PrefabInstance: {fileID: 8954587360635985139}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &818593609
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -561,6 +566,7 @@ GameObject:
   - component: {fileID: 1198058431}
   - component: {fileID: 1198058430}
   - component: {fileID: 1198058429}
+  - component: {fileID: 1198058432}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -633,6 +639,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1198058432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198058428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3661c459e013c35448639c47a7304032, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 764906856}
 --- !u!1 &1348185221
 GameObject:
   m_ObjectHideFlags: 0
@@ -781,8 +800,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1627960882}
   - component: {fileID: 1627960881}
+  - component: {fileID: 1627960883}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: GameController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -817,6 +837,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1627960883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627960880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1addb59dcc6d8b7489bf5cba37ff8a69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  creep1: {fileID: 2187586808017226020, guid: 8e11c8585b8295943b905ee60f617e89, type: 3}
+  creep2: {fileID: 5799280121960549609, guid: cc834bc1a59fd314999a6ca59abdf91f, type: 3}
+  creep3: {fileID: 3155590550848168465, guid: f082c8d85221b6141ae80ec2b432d229, type: 3}
+  poolSize: 10
+  pooledObjects1: []
+  pooledObjects2: []
+  pooledObjects3: []
 --- !u!1 &1664643819
 GameObject:
   m_ObjectHideFlags: 0
@@ -1307,11 +1346,39 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2371294924340193007, guid: b776dca48d8b996469f8e07b874d06d1, type: 3}
+      propertyPath: circle1
+      value: 
+      objectReference: {fileID: 1309815540896036238, guid: 3d43efe033d2c8d4bb5aa34eb2778d79, type: 3}
+    - target: {fileID: 2371294924340193007, guid: b776dca48d8b996469f8e07b874d06d1, type: 3}
+      propertyPath: circle2
+      value: 
+      objectReference: {fileID: 5631765915172983780, guid: 72ce0ca77e594e541abb0b19f588f0e9, type: 3}
+    - target: {fileID: 2371294924340193007, guid: b776dca48d8b996469f8e07b874d06d1, type: 3}
+      propertyPath: circle3
+      value: 
+      objectReference: {fileID: 645436115356554030, guid: 260bd39515f2b44428172b84c2e8a62b, type: 3}
+    - target: {fileID: 2371294924340193007, guid: b776dca48d8b996469f8e07b874d06d1, type: 3}
       propertyPath: joystick
       value: 
       objectReference: {fileID: 818593611}
+    - target: {fileID: 2371294924340193007, guid: b776dca48d8b996469f8e07b874d06d1, type: 3}
+      propertyPath: lightning
+      value: 
+      objectReference: {fileID: 7380069786450994442, guid: c3373de5cafb31447b37169d8a31d8f2, type: 3}
+    - target: {fileID: 2371294924340193007, guid: b776dca48d8b996469f8e07b874d06d1, type: 3}
+      propertyPath: slashAttackPrefab
+      value: 
+      objectReference: {fileID: 7884434582709959555, guid: 5aefe3f888b976c479edd243a05b00e3, type: 3}
     - target: {fileID: 6824031169415072791, guid: b776dca48d8b996469f8e07b874d06d1, type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6824031169415072791, guid: b776dca48d8b996469f8e07b874d06d1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6824031169415072791, guid: b776dca48d8b996469f8e07b874d06d1, type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7536352417390260234, guid: b776dca48d8b996469f8e07b874d06d1, type: 3}

@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Creep1
+  - Creep2
+  - Creep3
   layers:
   - Default
   - TransparentFX

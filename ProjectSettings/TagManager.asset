@@ -7,6 +7,8 @@ TagManager:
   - Creep1
   - Creep2
   - Creep3
+  - Exp
+  - Weapon
   layers:
   - Default
   - TransparentFX

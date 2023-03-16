@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class GameController : MonoBehaviour
 {
@@ -15,6 +17,10 @@ public class GameController : MonoBehaviour
     public List<GameObject> pooledObjects1;
     public List<GameObject> pooledObjects2;
     public List<GameObject> pooledObjects3;
+
+    public Image foregroundExpBar;
+    public float maxExp = 100f;
+    public float expGain = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -50,13 +56,18 @@ public class GameController : MonoBehaviour
 
         }
 
-        SpawnWave(1, 5);
+        StartCoroutine(SpawnWaves());
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (expGain >= maxExp)
+        {
+            expGain = 0;
+            maxExp += 20;
+        }
+        SetExp(expGain);
     }
 
     public void SpawnWave(int waveNumber, int numMonsters)
@@ -80,9 +91,29 @@ public class GameController : MonoBehaviour
 
             // code to position and orient the monster
             monster.transform.position = new Vector2(Random.Range(-5, 5), Random.Range(-5, 5));
-    }
+        }
     }
 
+    private IEnumerator SpawnWaves()
+    {
+        int waveCount = 1;
+        while (true)
+        {
+            int creepNum = waveCount * 3;
+            if (creepNum > poolSize * 3)
+            {
+                creepNum = poolSize * 3;
+            }
+            SpawnWave(waveCount, creepNum);
+            waveCount++;
+            yield return new WaitForSeconds(5);
+        }
+    }
+
+    public void SetExp(float exp)
+    {
+        foregroundExpBar.fillAmount = exp / maxExp;
+    }
 
     public GameObject GetMonster1()
     {

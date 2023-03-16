@@ -96,4 +96,26 @@ public class PlayerController : MonoBehaviour
             Destroy(ln, 0.3f);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Exp"))
+        {
+            if (other.gameObject.name == "ExpLow")
+            {
+                GameController.instance.expGain += 1;
+                Destroy(other.gameObject);
+            }
+            else if (other.gameObject.name == "ExpMedium")
+            {
+                GameController.instance.expGain += 2;
+                Destroy(other.gameObject);
+            }
+            else
+            {
+                GameController.instance.expGain += 3;
+                Destroy(other.gameObject);
+            }
+        }
+    }
 }

@@ -11,6 +11,9 @@ public class CreepManager : MonoBehaviour
     public GameObject player;
     private Rigidbody2D rb;
 
+    public int health = 5;
+    public int damageAmount = 1;
+
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -21,6 +24,17 @@ public class CreepManager : MonoBehaviour
     {
         Vector2 direction = (player.transform.position - transform.position).normalized;
         rb.MovePosition(rb.position + direction * Time.fixedDeltaTime);
+    }
+
+    public void TakeDamage(int damageAmount)
+    {
+        health -= damageAmount;
+        if (health <= 0)
+        {
+            DropItem();
+            MenuController.instance.creepCount++;
+            GameController.instance.ReturnToPool(this.gameObject);
+        }
     }
 
     public void DropItem()
@@ -46,12 +60,7 @@ public class CreepManager : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Weapon"))
         {
-            DropItem();
-            GameController.instance.ReturnToPool(this.gameObject);
-        }
-        if (collision.gameObject.CompareTag("Player"))
-        {
-
+            TakeDamage(collision.gameObject.GetComponent<WeaponControl>().damage);
         }
     }
 }

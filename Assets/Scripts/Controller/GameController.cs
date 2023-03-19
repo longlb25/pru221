@@ -19,8 +19,10 @@ public class GameController : MonoBehaviour
     public List<GameObject> pooledObjects3;
 
     public Image foregroundExpBar;
-    public float maxExp = 100f;
+    public float maxExp = 10f;
     public float expGain = 0;
+
+    public GameObject weaponPanel;
 
     // Start is called before the first frame update
     void Start()
@@ -55,7 +57,7 @@ public class GameController : MonoBehaviour
             pooledObjects3.Add(obj3);
 
         }
-
+        StartCoroutine(ShowWeaponPanel());
         StartCoroutine(SpawnWaves());
     }
 
@@ -64,8 +66,9 @@ public class GameController : MonoBehaviour
     {
         if (expGain >= maxExp)
         {
+            SetHealth();
             expGain = 0;
-            maxExp += 20;
+            maxExp += 10;
         }
         SetExp(expGain);
     }
@@ -106,13 +109,26 @@ public class GameController : MonoBehaviour
             }
             SpawnWave(waveCount, creepNum);
             waveCount++;
-            yield return new WaitForSeconds(5);
+            yield return new WaitForSeconds(20);
         }
+    }
+
+    IEnumerator ShowWeaponPanel()
+    {
+        yield return new WaitForSeconds(1);
+        Time.timeScale = 0;
+        weaponPanel.SetActive(true);
     }
 
     public void SetExp(float exp)
     {
         foregroundExpBar.fillAmount = exp / maxExp;
+    }
+
+    public void SetHealth()
+    {
+        PlayerController.instance.maxHealth += 20;
+        PlayerController.instance.curHealth += 10;
     }
 
     public GameObject GetMonster1()

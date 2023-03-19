@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4711787088129390849}
   - component: {fileID: 5710280006711030506}
   - component: {fileID: 4194433006927173682}
+  - component: {fileID: 7752301698697234597}
   m_Layer: 0
   m_Name: Circle Deffender (4)
   m_TagString: Weapon
@@ -99,6 +100,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &7752301698697234597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253950290411565373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1b91099ff3007f4abfd2c14902ab451, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 3
 --- !u!1 &645436115356554030
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,6 +176,7 @@ GameObject:
   - component: {fileID: 1255161272797597992}
   - component: {fileID: 5307055446100605799}
   - component: {fileID: 1039848556677054967}
+  - component: {fileID: 151821391281063046}
   m_Layer: 0
   m_Name: Circle Deffender (6)
   m_TagString: Weapon
@@ -250,6 +265,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &151821391281063046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354026660231306175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1b91099ff3007f4abfd2c14902ab451, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 3
 --- !u!1 &3069052671058153787
 GameObject:
   m_ObjectHideFlags: 0
@@ -261,6 +289,7 @@ GameObject:
   - component: {fileID: 2184710604211968238}
   - component: {fileID: 4335317448176337352}
   - component: {fileID: 569287948666532074}
+  - component: {fileID: 1467212920082135558}
   m_Layer: 0
   m_Name: Circle Deffender (1)
   m_TagString: Weapon
@@ -349,6 +378,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &1467212920082135558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3069052671058153787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1b91099ff3007f4abfd2c14902ab451, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 3
 --- !u!1 &3761163263421042937
 GameObject:
   m_ObjectHideFlags: 0
@@ -360,6 +402,7 @@ GameObject:
   - component: {fileID: 4186272236804822048}
   - component: {fileID: 4751426232240735780}
   - component: {fileID: 3773487060409242625}
+  - component: {fileID: 6954197095190520363}
   m_Layer: 0
   m_Name: Circle Deffender (5)
   m_TagString: Weapon
@@ -448,6 +491,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &6954197095190520363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3761163263421042937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1b91099ff3007f4abfd2c14902ab451, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 3
 --- !u!1 &7962946274753967726
 GameObject:
   m_ObjectHideFlags: 0
@@ -459,6 +515,7 @@ GameObject:
   - component: {fileID: 2828907079214880314}
   - component: {fileID: 7622162254335659775}
   - component: {fileID: 6931604614931552224}
+  - component: {fileID: 4333098313834891197}
   m_Layer: 0
   m_Name: Circle Deffender (3)
   m_TagString: Weapon
@@ -547,6 +604,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &4333098313834891197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7962946274753967726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1b91099ff3007f4abfd2c14902ab451, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 3
 --- !u!1 &8425566356584819630
 GameObject:
   m_ObjectHideFlags: 0
@@ -558,6 +628,7 @@ GameObject:
   - component: {fileID: 2224393638878209256}
   - component: {fileID: 3887543904511638686}
   - component: {fileID: 5462786125859234807}
+  - component: {fileID: 8128703366088696196}
   m_Layer: 0
   m_Name: Circle Deffender (2)
   m_TagString: Weapon
@@ -646,3 +717,16 @@ CircleCollider2D:
   m_Offset: {x: 0.00000011920929, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &8128703366088696196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8425566356584819630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1b91099ff3007f4abfd2c14902ab451, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 3

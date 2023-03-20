@@ -24,32 +24,32 @@ public class CharacterStateManager : MonoBehaviour
     {
         rigidbody = GetComponent<Rigidbody2D>();
         currentState = idleState;
-        currentState.EnterState(this);
+        //currentState.EnterState(this);
         isCollize = false;
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if (currentState != null)
-        {
-            currentState.UpdateState(this);
-        }
-    }
+    //void Update()
+    //{
+    //    if (currentState != null)
+    //    {
+    //        currentState.UpdateState(this);
+    //    }
+    //}
 
-    public void SwitchState(CharacterBaseState c)
-    {
-        if (currentState != null)
-        {
-            c.ExitState(this);
-        }
-        currentState = c;
-        if (currentState != null)
-        {
-            c.EnterState(this);
-            //onStateChange.Invoke();
-        }
-    }
+    //public void SwitchState(CharacterBaseState c)
+    //{
+    //    if (currentState != null)
+    //    {
+    //        c.ExitState(this);
+    //    }
+    //    currentState = c;
+    //    if (currentState != null)
+    //    {
+    //        c.EnterState(this);
+    //        //onStateChange.Invoke();
+    //    }
+    //}
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

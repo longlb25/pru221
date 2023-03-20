@@ -4,28 +4,24 @@ using UnityEngine;
 
 public class CollisionState : CharacterBaseState
 {
-    public override void EnterState(CharacterStateManager c)
+    public override void EnterState(CreepManager c)
     {
         Debug.Log("collision state");
-        c.GetComponent<Renderer>().material.color = Color.red;
+        //c.GetComponent<Renderer>().material.color = Color.red;
+        c.TakeDamage(c.collisionObj.GetComponent<WeaponControl>().damage);
+
     }
 
-    public override void ExitState(CharacterStateManager c)
+    public override void ExitState(CreepManager c)
     {
         c.isCollize = false;
     }
 
-    public override void UpdateState(CharacterStateManager c)
+    public override void UpdateState(CreepManager c)
     {
-        if (Input.anyKeyDown)
+        if (c.player != null)
         {
             c.SwitchState(c.moveState);
-            Debug.Log("switch to move state");
-        }
-        if (c.rigidbody.velocity.magnitude <= 0 && !c.isCollize)
-        {
-            c.SwitchState(c.idleState);
-            Debug.Log("Switch to idle state");
         }
     }
 }

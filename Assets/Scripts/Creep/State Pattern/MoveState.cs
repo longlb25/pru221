@@ -4,28 +4,26 @@ using UnityEngine;
 
 public class MoveState : CharacterBaseState
 {
-    public override void EnterState(CharacterStateManager c)
+    public override void EnterState(CreepManager c)
     {
         Debug.Log("move state");
-        c.GetComponent<Renderer>().material.color = Color.blue;
+        //c.GetComponent<Renderer>().material.color = Color.blue;
     }
 
-    public override void ExitState(CharacterStateManager c)
+    public override void ExitState(CreepManager c)
     {
 
     }
 
-    public override void UpdateState(CharacterStateManager c)
+    public override void UpdateState(CreepManager c)
     {
-        c.horizontal = Input.GetAxis("Horizontal");
-        c.vertical = Input.GetAxis("Vertical");
-        c.rigidbody.velocity = new Vector2(c.horizontal * c._speed, c.vertical * c._speed);
-        if (c.rigidbody.velocity.magnitude <= 0)
+        Vector2 direction = (c.player.transform.position - c.transform.position).normalized;
+        c.rb.MovePosition(c.rb.position + direction * Time.deltaTime);
+        if (c.player == null)
         {
             c.SwitchState(c.idleState);
-            Debug.Log("Switch to idle state");
         }
-        if (c.isCollize) 
+        if (c.isCollize)
         {
             c.SwitchState(c.colisionState);
         }

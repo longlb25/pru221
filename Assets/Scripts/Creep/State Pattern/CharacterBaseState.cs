@@ -4,9 +4,9 @@ using UnityEngine;
 
 public abstract class CharacterBaseState
 {
-    public abstract void EnterState(CharacterStateManager c);
+    public abstract void EnterState(CreepManager c);
 
-    public abstract void UpdateState(CharacterStateManager c);
+    public abstract void UpdateState(CreepManager c);
 
-    public abstract void ExitState(CharacterStateManager c);
+    public abstract void ExitState(CreepManager c);
 }

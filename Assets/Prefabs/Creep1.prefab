@@ -98,7 +98,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0026325434, y: 0.0605461}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -109,7 +109,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.28, y: 1.28}
+  m_Size: {x: 0.9588423, y: 0.64294946}
   m_EdgeRadius: 0
 --- !u!50 &-2380462967466929339
 Rigidbody2D:
@@ -148,3 +148,5 @@ MonoBehaviour:
   expMedium: {fileID: 6219956830992262602, guid: 0282ee488d8816a4d8ad66ba4e570bdc, type: 3}
   expHigh: {fileID: 6219956830992262602, guid: 001350979afba0947afa3bee118a045a, type: 3}
   player: {fileID: 0}
+  health: 3
+  damageAmount: 3

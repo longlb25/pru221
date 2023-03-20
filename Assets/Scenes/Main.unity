@@ -145,7 +145,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &251999386
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5600,7 +5600,7 @@ MonoBehaviour:
   pooledObjects2: []
   pooledObjects3: []
   foregroundExpBar: {fileID: 1582840190}
-  maxExp: 100
+  maxExp: 20
   expGain: 0
   weaponPanel: {fileID: 1348185221}
 --- !u!1 &1664643819

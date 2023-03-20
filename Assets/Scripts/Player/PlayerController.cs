@@ -244,12 +244,12 @@ public class PlayerController : MonoBehaviour
         {
             if (other.gameObject.name == "ExpLow")
             {
-                GameController.instance.expGain += 1;
+                GameController.instance.expGain += 3;
                 Destroy(other.gameObject);
             }
             else if (other.gameObject.name == "ExpMedium")
             {
-                GameController.instance.expGain += 3;
+                GameController.instance.expGain += 4;
                 Destroy(other.gameObject);
             }
             else

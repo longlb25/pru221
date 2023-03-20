@@ -148,5 +148,5 @@ MonoBehaviour:
   expMedium: {fileID: 6219956830992262602, guid: 0282ee488d8816a4d8ad66ba4e570bdc, type: 3}
   expHigh: {fileID: 6219956830992262602, guid: 001350979afba0947afa3bee118a045a, type: 3}
   player: {fileID: 0}
-  health: 10
+  health: 6
   damageAmount: 1

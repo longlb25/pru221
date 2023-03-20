@@ -19,7 +19,7 @@ public class GameController : MonoBehaviour
     public List<GameObject> pooledObjects3;
 
     public Image foregroundExpBar;
-    public float maxExp = 10f;
+    public float maxExp = 20f;
     public float expGain = 0;
 
     public GameObject weaponPanel;
@@ -67,6 +67,7 @@ public class GameController : MonoBehaviour
         if (expGain >= maxExp)
         {
             SetHealth();
+            StartCoroutine(ShowWeaponPanel());
             expGain = 0;
             maxExp += 10;
         }
@@ -124,6 +125,7 @@ public class GameController : MonoBehaviour
     {
         foregroundExpBar.fillAmount = exp / maxExp;
     }
+
 
     public void SetHealth()
     {

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
@@ -37,6 +38,7 @@ public class PlayerController : MonoBehaviour
     public Text skill2;
     public Text skill3;
 
+    public GameObject gameOverPanel;
 
     private void Start()
     {
@@ -63,7 +65,10 @@ public class PlayerController : MonoBehaviour
     {
         move.x = joystick.Horizontal;
         move.y = joystick.Vertical;
-
+        if (curHealth <= 0)
+        {
+            gameOverPanel.SetActive(true);
+        }
     }
 
     private void FixedUpdate()
@@ -88,6 +93,7 @@ public class PlayerController : MonoBehaviour
         else if (slashLevel > 8)
         {
             //update skill panel to max
+            skill1.text = "Level Max";
         }
         Debug.Log("slash: " + slashLevel);
         skill1.text = "Level " + slashLevel.ToString();
@@ -121,6 +127,8 @@ public class PlayerController : MonoBehaviour
         else if (deffenderLevel > 8)
         {
             //update skill panel to max
+            skill2.text = "Level Max";
+
         }
         Debug.Log("deffend: " + deffenderLevel);
         skill2.text = "Level " + deffenderLevel.ToString();
@@ -145,9 +153,10 @@ public class PlayerController : MonoBehaviour
         else if (lightningLevel > 8)
         {
             //update skill panel to max
+            skill3.text = "Level Max";
         }
         Debug.Log("lightning: " + lightningLevel);
-        skill2.text = "Level " + lightningLevel.ToString();
+        skill3.text = "Level " + lightningLevel.ToString();
         GameController.instance.weaponPanel.SetActive(false);
         Time.timeScale = 1;
     }
@@ -282,5 +291,16 @@ public class PlayerController : MonoBehaviour
                 temp = 0;
             }        
         }
+    }
+
+    public void BackToHome()
+    {
+        SceneManager.LoadScene("Start");
+    }
+
+    public void RestartGame()
+    {
+        //Time.timeScale = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
